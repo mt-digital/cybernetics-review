@@ -1,0 +1,83 @@
+% Took this from CogSci but removed the header, sorry.
+%
+% Author: Matthew Turner
+% Date: 2017-11-23
+
+\documentclass[11pt,letterpaper]{article}
+
+% \usepackage{cogsci}
+\usepackage{fullpage}
+\usepackage{booktabs}
+\usepackage{pslatex}
+\usepackage{apacite}
+\usepackage{amsmath}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{bigfoot}
+\usepackage[export]{adjustbox}
+\setlength\intextsep{0pt}
+
+\usepackage{graphicx}
+
+\usepackage{gb4e}  % linguistic examples
+\noautomath
+
+\usepackage{amsthm}
+\newtheorem*{remark}{Remark}
+
+\title{Notes on Norbert Wiener's \emph{Cybernetics}}
+
+\author{{\large \bf Matthew A.~Turner (mturner8@ucmerced.edu)}}
+
+\begin{document}
+\maketitle
+
+\section{Ergodic theory, the Fourier integral as an invariant under translations}
+\label{sec:label}
+
+A \emph{character} of a transformation group, where transformations $T$ transform
+coordinates $x$, are functions $f(x)$ such that 
+
+\begin{equation*}
+  f(Tx) = \alpha(T) f(x)
+\end{equation*}
+\noindent
+where \(|\alpha(T)| = |f(x)| = 1\) for all $T$ and $x$. On p. 51, Wiener remarks,
+``clearly $f(x)g(x)$'' is a character if $f(x)$ and $g(x)$ are characters.
+Here is a proof of this assertion.
+
+\begin{remark}
+    If $f(x)$ and $g(x)$ are characters, then $h(x) = f(x)g(x)$ is 
+    also a character of the group.
+\end{remark}
+\begin{proof}
+    \begin{align*}
+        h(Tx) &= f(Tx)g(Tx) \\
+              &= \alpha_f(T)f(x) \cdot \alpha_g(T)g(x)
+    \end{align*}
+
+    Let \(\alpha_h(T) = \alpha_f(T)\alpha_g(T)\). Then 
+    \begin{align*}
+        |\alpha_h(T)| &= |\alpha_f(T)\alpha_g(T)| \\
+                      &= |\alpha_f(T)| \cdot |\alpha_g(T)| \\
+                      &= 1
+    \end{align*}
+
+    Similarly, since the absolute value of $f(x)$ and $g(x)$ are both 1, 
+    \(|h(x)| = 1\). We then have $h(Tx) = \alpha_h(T)h(x)$, where the
+    $|\alpha_h(T)| = 1$ and $|h(x)| = 1$. Therefore $h(x)$ is also a character of
+    the transformation group.
+\end{proof}
+
+\nocite{Wiener1961}
+
+\bibliographystyle{apacite}
+
+\setlength{\bibleftmargin}{.125in}
+\setlength{\bibindent}{-\bibleftmargin}
+\bibliography{/Users/mt/workspace/papers/library.bib}
+
+\end{document}
